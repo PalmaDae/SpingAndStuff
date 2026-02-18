@@ -11,9 +11,13 @@ public class User {
         return id;
     }
 
+    public User() {
+    }
+
     public String getName() {
         return name;
     }
+
 
     public User(long id, String name) {
         this.id = id;
