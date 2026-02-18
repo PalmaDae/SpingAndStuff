@@ -12,8 +12,9 @@ public class UserService {
     private UserRepository userRepository;
 
     //В UR по-хорошему сделать булевы и проверять их тут, но пока так будет
-    public UserService() {
-        this.userRepository = new UserRepository(DataClass.getConnection());
+    @Autowired
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     public void addUser(User user) {
