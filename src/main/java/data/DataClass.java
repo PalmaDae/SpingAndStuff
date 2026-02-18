@@ -1,9 +1,12 @@
 package data;
 
+import org.springframework.stereotype.Component;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+@Component
 public class DataClass {
     public static Connection getConnection() {
         Connection connection = null;

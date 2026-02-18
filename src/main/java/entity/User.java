@@ -14,4 +14,9 @@ public class User {
     public String getName() {
         return name;
     }
+
+    public User(long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }

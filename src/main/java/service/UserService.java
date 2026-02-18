@@ -2,13 +2,16 @@ package service;
 
 import data.DataClass;
 import entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import repository.UserRepository;
 
+@Service
 public class UserService {
     private UserRepository userRepository;
 
     //В UR по-хорошему сделать булевы и проверять их тут, но пока так будет
-
     public UserService() {
         this.userRepository = new UserRepository(DataClass.getConnection());
     }

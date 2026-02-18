@@ -1,23 +1,28 @@
 package repository;
 
+import data.DataClass;
 import entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+@Component
 public class UserRepository {
     private Connection connection;
 
-    public UserRepository(Connection connection) {
-        this.connection = connection;
+    @Autowired
+    public UserRepository(DataClass dataClass) {
+        this.connection = dataClass.getConnection();
     }
 
 
     //CREATE
     public void createUser(User user) {
-        String sql = "insert into users (id, name) values (?, ?,)";
+        String sql = "insert into users (id, name) values (?, ?)";
 
         try(PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setLong(1, user.getId());
@@ -30,7 +35,7 @@ public class UserRepository {
 
     //READ
     public User getUserById(Long id) {
-        String sql = "select 1 from users where id = ?";
+        String sql = "select is, name from users where id = ?";
 
         User user = null;
 
