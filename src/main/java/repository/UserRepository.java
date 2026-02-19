@@ -22,11 +22,10 @@ public class UserRepository {
 
     //CREATE
     public void createUser(User user) {
-        String sql = "insert into users (id, name) values (?, ?)";
+        String sql = "insert into users (name) values (?)";
 
         try(PreparedStatement ps = connection.prepareStatement(sql)) {
-            ps.setLong(1, user.getId());
-            ps.setString(2, user.getName());
+            ps.setString(1, user.getName());
             ps.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -35,7 +34,7 @@ public class UserRepository {
 
     //READ
     public User getUserById(Long id) {
-        String sql = "select is, name from users where id = ?";
+        String sql = "select *, name from users where id = ?";
 
         User user = null;
 

@@ -5,15 +5,14 @@ import service.UserService;
 
 public class Application {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/beans.xml");
 
         UserService service = context.getBean(UserService.class);
 
-        User user = new User(1L, "Dams");
-
-        service.addUser(user);
-        service.getUser(1L);
-        service.updateUser(1L, "Smad");
-        service.deleteUser(user);
+        User dams = new User("Dams");
+        service.addUser(dams);
+        User fakeDams = service.getUser(1L);
+        service.updateUser(1L, "FakeDams");
+        service.deleteUser(fakeDams);
     }
 }
