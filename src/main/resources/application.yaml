@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: SpringAndStuff
+
+info:
+  app:
+    name: ${spring.application.name}
+    version: 0.0.1
