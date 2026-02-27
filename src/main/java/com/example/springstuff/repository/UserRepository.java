@@ -1,7 +1,7 @@
-package repository;
+package com.example.springstuff.repository;
 
-import data.DataClass;
-import entity.User;
+import com.example.springstuff.data.DataClass;
+import com.example.springstuff.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

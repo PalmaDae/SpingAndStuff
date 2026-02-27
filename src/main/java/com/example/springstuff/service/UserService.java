@@ -1,11 +1,9 @@
-package service;
+package com.example.springstuff.service;
 
-import data.DataClass;
-import entity.User;
+import com.example.springstuff.entity.User;
+import com.example.springstuff.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-import repository.UserRepository;
 
 @Service
 public class UserService {
