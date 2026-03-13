@@ -12,7 +12,7 @@ public class DataClass {
         Connection connection = null;
         try {
             connection = DriverManager.getConnection(
-                    "jdbc:postgresql://localhost:5432/spring",
+                    "jdbc:postgresql://localhost:5432/fisd_db",
                     "postgres",
                     "010909"
             );
