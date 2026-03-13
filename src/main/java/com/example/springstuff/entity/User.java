@@ -1,30 +1,20 @@
 package com.example.springstuff.entity;
 
+import lombok.*;
 import org.springframework.stereotype.Component;
 
-@Component
+import java.util.UUID;
+
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
 public class User {
-    private long id;
+    private UUID id;
     private String name;
 
-    public long getId() {
-        return id;
-    }
-
-    public User() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-
-    public User(long id, String name) {
+    public User(UUID id, String name) {
         this.id = id;
-        this.name = name;
-    }
-
-    public User(String name) {
         this.name = name;
     }
 }
