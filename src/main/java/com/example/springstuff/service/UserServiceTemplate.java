@@ -1,4 +1,4 @@
-package com.example.springstuff.service;
-
-public class UserServiceTemplate {
-}
+//package com.example.springstuff.service;
+//
+//public class UserServiceTemplate {
+//}
