@@ -2,24 +2,32 @@ package com.example.springstuff.entity;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-
-import java.util.ArrayList;
-import java.util.List;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "users")
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Long id;
 
-    private String username;
+    @Column(name = "login", nullable = false)
+    private String login;
+
+    @Column(name = "hash_pass", nullable = false)
+    private String hash_pass;
+
+    @Column(name = "email", nullable = false)
+    private String email;
 
     @Enumerated(EnumType.STRING)
-    private UserStatus status;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<BookEntity> books = new ArrayList<>();
+    private UserRole role;
 }
